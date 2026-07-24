@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAVIG STYLE — Premium T-Shirt Collection</title>
+  <meta name="description" content="SAVIG STYLE — Luxury streetwear T-shirts crafted with precision. Explore our premium collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html"  class="logo"><img src="images/SavigStyle-logo.png" alt="SAVIG STYLE Logo""></a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="shop.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge">3</span>
+        </a>
+
+        <label class="menu-toggle" for="menu-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav (CSS-only) -->
+  <input type="checkbox" id="menu-check" style="display:none">
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="shop.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart (3)</a>
+  </nav>
+
+  <main>
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="images/hero bg1.png">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="label">Ethically Crafted · GOTS Certified 
+
+</span>
+        <h1 class="heading-xl" style="margin-top: 16px;">WEAR WHAT<br>MATTERS</h1>
+        <p>Premium cotton apparel, grown without compromise and worn with intention. Each stitch tells the story of land, craft, and care.
+        </p>
+        <div class="hero-cta">
+          <a href="shop.html" class="btn btn-primary btn-large">Shop Now</a>
+          <a href="about.html" class="btn btn-outline btn-large">Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FEATURED COLLECTIONS ═══════════ -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px;">
+          <h2 class="heading-lg">Featured Collections</h2>
+          <a href="shop.html" style="font-size:0.875rem;font-weight:600;color:var(--color-accent);">View all →</a>
+        </div>
+
+        <div class="collections-grid">
+          <a href="shop.html" class="collection-card" style="grid-row: span 2;">
+            <img src="images/T-Shirt co.png" alt="T-Shirt">
+            <div class="collection-card-overlay">
+              <div class="collection-card-text">
+                <p>EVERYDAY LUXURY</p>
+                <h3>T-Shirts</h3>
+              </div>
+            </div>
+          </a>
+          <a href="shop.html" class="collection-card">
+            <img src="images/Sweaters co.png" alt="Sweaters">
+            <div class="collection-card-overlay">
+              <div class="collection-card-text">
+                <p>COZY & COMFORTABLE</p>
+                <h3>Sweaters</h3>
+              </div>
+            </div>
+          </a>
+          <a href="shop.html" class="collection-card">
+            <img src="images/Socks co.png" alt="Socks">
+            <div class="collection-card-overlay">
+              <div class="collection-card-text">
+                <p>WARM WOVEN IN</p>
+                <h3>Socks</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ NEW ARRIVALS ═══════════ -->
+    <section class="section-padding" style="background-color:var(--color-cream);">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <span class="label">Just Dropped</span>
+          <h2 class="heading-lg" style="margin-top:8px;">New Arrivals</h2>
+        </div>
+
+        <div class="shop-grid" style="padding:0;">
+          <!-- Product 1 -->
+          <a href="Sky Blue T-Shirt.html" class="product-card">
+            <div class="product-card-image">
+              <img src="images/Product/Sky Blue pro.webp" alt="Tee">
+              <span class="product-badge">New</span>
+            </div>
+            <div class="product-card-info">
+              <h3>Sky Blue Cotton T-Shirt</h3>
+              <p class="product-price">RS 1,299</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="product-colors">
+                <span style="background:skyblue;"></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 2 -->
+          <a href="product.html" class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="Urban Oversized Tee">
+              <span class="product-badge">New</span>
+            </div>
+            <div class="product-card-info">
+              <h3>Urban Oversized Tee</h3>
+              <p class="product-price">$65</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" style="fill:#d4d4d4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="product-colors">
+                <span style="background:#ffffff;border-color:#d4d4d4;"></span>
+                <span style="background:#0a0a0a;"></span>
+                <span style="background:#c4654a;"></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 3 -->
+          <a href="product.html" class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&q=80" alt="Minimal Logo Tee">
+            </div>
+            <div class="product-card-info">
+              <h3>Minimal Logo Tee</h3>
+              <p class="product-price">$48</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="product-colors">
+                <span style="background:#2d2d2d;"></span>
+                <span style="background:#d4b483;"></span>
+                <span style="background:#4a6741;"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ BESTSELLERS ═══════════ -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <span class="label">Most Popular</span>
+          <h2 class="heading-lg" style="margin-top:8px;">Best-Selling Tees</h2>
+        </div>
+
+        <div class="shop-grid" style="padding:0;">
+          <!-- Bestseller 1 -->
+          <a href="product.html" class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&q=80" alt="The Essential Tee">
+              <span class="product-badge" style="background-color:var(--color-black);">Bestseller</span>
+            </div>
+            <div class="product-card-info">
+              <h3>The Essential Tee</h3>
+              <p class="product-price"><span class="product-price-original">$75</span>$58</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Bestseller 2 -->
+          <a href="product.html" class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80" alt="Streetwear Classic">
+              <span class="product-badge" style="background-color:var(--color-black);">Bestseller</span>
+            </div>
+            <div class="product-card-info">
+              <h3>Streetwear Classic</h3>
+              <p class="product-price"><span class="product-price-original">$85</span>$62</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" style="fill:#d4d4d4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+          </a>
+
+          <!-- Bestseller 3 -->
+          <a href="product.html" class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1627225329996-39045d024109?w=600&q=80" alt="Premium Heavyweight">
+            </div>
+            <div class="product-card-info">
+              <h3>Premium Heavyweight</h3>
+              <p class="product-price">$72</p>
+              <div class="product-rating">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROMO BANNER ═══════════ -->
+    <section style="padding: 0 var(--space-xl);">
+      <div class="container">
+        <div class="promo-banner">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=80" alt="Summer sale banner">
+          <div class="promo-banner-content">
+            <h2>Summer Sale — Up to 40% Off</h2>
+            <p>Limited time only. Premium essentials at incredible prices.</p>
+            <a href="shop.html" class="btn btn-accent btn-large">Shop the Sale</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ TESTIMONIALS ═══════════ -->
+    <section class="section-padding" style="background-color:var(--color-cream);">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;">
+          <span class="label">What People Say</span>
+          <h2 class="heading-lg" style="margin-top:8px;">Customer Love</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="product-rating" style="margin-bottom:16px;">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>"The quality is unmatched. I've never worn a T-shirt that feels this premium yet so comfortable. SAVIG STYLE has changed my wardrobe."</blockquote>
+            <cite>Marcus Johnson <span>Essential Tee Owner</span></cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="product-rating" style="margin-bottom:16px;">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>"The packaging alone tells you this brand cares. Every stitch, every detail — it's like wearing a piece of art."</blockquote>
+            <cite>Sarah Chen <span>Graphic Series Owner</span></cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="product-rating" style="margin-bottom:16px;">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>"Finally, a brand that understands what modern streetwear should be. Clean design, premium feel, and the fit is absolutely perfect."</blockquote>
+            <cite>David Kim <span>Oversized Fit Owner</span></cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ NEWSLETTER ═══════════ -->
+    <section class="newsletter">
+      <div class="container">
+        <span class="label" style="color:var(--color-accent);">Stay Connected</span>
+        <h2 class="heading-md" style="margin-top:8px;">Join the SAVIG Community</h2>
+        <p>Get early access to new drops, exclusive offers, and style inspiration delivered to your inbox.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">SAVIG<span>.</span>STYLE</span>
+          <p>Premium T-shirts crafted for those who demand more. Luxury streetwear, designed with intention and made to last.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+            <li><a href="shop.html">Bestsellers</a></li>
+            <li><a href="shop.html">Sale</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 SAVIG STYLE. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.2 3.5-3 4.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ WHATSAPP BUTTON ═══════════ -->
+  <a href="https://wa.me/15552345678?text=Hi!%20I'm%20interested%20in%20ordering%20from%20SAVIG%20STYLE" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <div class="whatsapp-tooltip">Need help? Chat with us!</div>
+
+</body>
+</html>
