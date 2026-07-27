@@ -3,19 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — SAVIG STYLE</title>
-  <meta name="description" content="Browse our premium T-shirt collection at SAVIG STYLE.">
+  <title>Shop Premium Cotton T-Shirts | SAVIG STYLE</title>
+  <meta name="description" content="Browse SAVIG STYLE's full T-shirt collection — premium cotton, timeless streetwear design, and easy ordering via WhatsApp. Shop everyday essentials and new arrivals.">
+  <link rel="canonical" href="https://www.savigstyle.com/shop.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAVIG STYLE">
+  <meta property="og:title" content="Shop Premium Cotton T-Shirts | SAVIG STYLE">
+  <meta property="og:description" content="Browse SAVIG STYLE's full T-shirt collection — premium cotton, timeless streetwear design, and easy ordering via WhatsApp.">
+  <meta property="og:url" content="https://www.savigstyle.com/shop.html">
+  <meta property="og:image" content="https://www.savigstyle.com/images/Product/sky-blue-cotton-tshirt.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shop Premium Cotton T-Shirts | SAVIG STYLE">
+  <meta name="twitter:description" content="Browse SAVIG STYLE's full T-shirt collection — premium cotton, timeless streetwear design.">
+  <meta name="twitter:image" content="https://www.savigstyle.com/images/Product/sky-blue-cotton-tshirt.webp">
+
+  <link rel="icon" type="image/webp" href="images/savigstyle-logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.savigstyle.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Shop", "item": "https://www.savigstyle.com/shop.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Sky Blue Cotton T-Shirt", "url": "https://www.savigstyle.com/sky-blue-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 2, "name": "Black Cotton T-Shirt", "url": "https://www.savigstyle.com/black-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 3, "name": "Navy Cotton T-Shirt", "url": "https://www.savigstyle.com/navy-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 4, "name": "White Cotton T-Shirt", "url": "https://www.savigstyle.com/white-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 5, "name": "Mustard Cotton T-Shirt", "url": "https://www.savigstyle.com/mustard-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 6, "name": "Beige Cotton T-Shirt", "url": "https://www.savigstyle.com/beige-cotton-tshirt.html"},
+      {"@type": "ListItem", "position": 7, "name": "Brown Cotton T-Shirt", "url": "https://www.savigstyle.com/brown-cotton-tshirt.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="header">
     <div class="container">
-      <a href="index.html"  class="logo"><img src="images/SavigStyle-logo.png" alt="SAVIG STYLE Logo""></a>
+      <a href="index.html"  class="logo"><img loading="lazy" src="images/savigstyle-logo.webp" alt="SAVIG STYLE Logo"></a>
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -32,7 +76,7 @@
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
-          <span class="cart-badge">3</span>
+          <span class="cart-badge">0</span>
         </a>
 
         <label class="menu-toggle" for="menu-check">
@@ -52,7 +96,7 @@
     <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart (3)</a>
+    <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
   </nav>
 
   <main>
@@ -71,187 +115,93 @@
         <!-- Filter Bar -->
         <div class="filter-bar">
           <div class="filter-categories">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">T-Shirts</button>
-            <button class="filter-btn">Oversized</button>
-            <button class="filter-btn">Graphic</button>
-            <button class="filter-btn">Essential</button>
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="cotton-tshirts">Cotton T-Shirts</button>
           </div>
-          <button class="filter-btn" style="display:flex;align-items:center;gap:6px;">
+          <button type="button" class="filter-btn" id="sort-btn" style="display:flex;align-items:center;gap:6px;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="16" y2="12"/><line x1="4" y1="18" x2="12" y2="18"/></svg>
-            Sort: Featured
+            <span id="sort-btn-label">Sort: Featured</span>
           </button>
         </div>
 
-        <p class="body-sm" style="margin-bottom:32px;">9 products</p>
+        <p style="max-width:640px;margin-bottom:32px;color:var(--color-gray);">
+          Every SAVIG STYLE tee is cut from soft, lightweight 100% cotton (150–160 GSM) with a comfortable
+          everyday fit — pre-shrunk, side-seamed, and made on demand in Pakistan. Pick from seven colorways,
+          from wardrobe basics like black, white, and navy to statement shades like mustard and sky blue,
+          all in sizes S–XXL with a full size chart on every product page.
+        </p>
+
+        <p class="body-sm" style="margin-bottom:32px;" id="shop-product-count">7 products</p>
 
         <!-- Product Grid -->
-        <div class="shop-grid">
-          <!-- Product 1 -->
-          <a href="product.html" class="product-card">
+        <div class="shop-grid" id="shop-grid">
+          <a href="sky-blue-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1622445275576-721325763afe?w=600&q=80" alt="Midnight Classic Tee">
-              <span class="product-badge">New</span>
+              <img loading="lazy" src="images/Product/sky-blue-cotton-tshirt-thumb.webp" alt="Sky Blue Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Midnight Classic Tee</h3>
-              <p class="product-price">$58</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Sky Blue Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 2 -->
-          <a href="product.html" class="product-card">
+          <a href="black-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80" alt="Urban Oversized Tee">
-              <span class="product-badge">New</span>
+              <img loading="lazy" src="images/Product/black-cotton-tshirt-thumb.webp" alt="Black Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Urban Oversized Tee</h3>
-              <p class="product-price">$65</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" style="fill:#d4d4d4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Black Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 3 -->
-          <a href="product.html" class="product-card">
+          <a href="navy-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&q=80" alt="Minimal Logo Tee">
+              <img loading="lazy" src="images/Product/navy-cotton-tshirt-thumb.webp" alt="Navy Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Minimal Logo Tee</h3>
-              <p class="product-price">$48</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Navy Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 4 -->
-          <a href="product.html" class="product-card">
+          <a href="white-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&q=80" alt="The Essential Tee">
-              <span class="product-badge" style="background-color:var(--color-black);">Bestseller</span>
+              <img loading="lazy" src="images/Product/white-cotton-tshirt-thumb.webp" alt="White Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>The Essential Tee</h3>
-              <p class="product-price"><span class="product-price-original">$75</span>$58</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>White Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 5 -->
-          <a href="product.html" class="product-card">
+          <a href="mustard-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80" alt="Streetwear Classic">
-              <span class="product-badge" style="background-color:var(--color-black);">Bestseller</span>
+              <img loading="lazy" src="images/Product/mustard-cotton-tshirt-thumb.webp" alt="Mustard Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Streetwear Classic</h3>
-              <p class="product-price"><span class="product-price-original">$85</span>$62</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" style="fill:#d4d4d4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Mustard Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 6 -->
-          <a href="product.html" class="product-card">
+          <a href="beige-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1627225329996-39045d024109?w=600&q=80" alt="Premium Heavyweight">
+              <img loading="lazy" src="images/Product/beige-cotton-tshirt-thumb.webp" alt="Beige Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Premium Heavyweight</h3>
-              <p class="product-price">$72</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Beige Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
 
-          <!-- Product 7 -->
-          <a href="product.html" class="product-card">
+          <a href="brown-cotton-tshirt.html" class="product-card" data-category="cotton-tshirts" data-price-low="1150">
             <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&q=80" alt="Heritage Graphic Tee">
-              <span class="product-badge" style="background:#2d2926;">Limited</span>
+              <img loading="lazy" src="images/Product/brown-cotton-tshirt-thumb.webp" alt="Brown Cotton T-Shirt" width="600" height="800">
             </div>
             <div class="product-card-info">
-              <h3>Heritage Graphic Tee</h3>
-              <p class="product-price">$89</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Product 8 -->
-          <a href="product.html" class="product-card">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=600&q=80" alt="Relaxed Fit Cotton Tee">
-            </div>
-            <div class="product-card-info">
-              <h3>Relaxed Fit Cotton Tee</h3>
-              <p class="product-price"><span class="product-price-original">$60</span>$45</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24" style="fill:#d4d4d4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Product 9 -->
-          <a href="product.html" class="product-card">
-            <div class="product-card-image">
-              <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?w=600&q=80" alt="Raw Edge Crew Tee">
-              <span class="product-badge">New</span>
-            </div>
-            <div class="product-card-info">
-              <h3>Raw Edge Crew Tee</h3>
-              <p class="product-price">$55</p>
-              <div class="product-rating">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
+              <h3>Brown Cotton T-Shirt</h3>
+              <p class="product-price">Rs 1,150 – Rs 1,200</p>
             </div>
           </a>
         </div>
@@ -288,10 +238,11 @@
         <div class="footer-col">
           <h4>Support</h4>
           <ul>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
+            <li><a href="shipping.html">Shipping Info</a></li>
+            <li><a href="return-policy.html">Return Policy</a></li>
             <li><a href="#">Size Guide</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -320,5 +271,7 @@
   </a>
   <div class="whatsapp-tooltip">Need help? Chat with us!</div>
 
+    <script src="js/cart.js" defer></script>
+    <script src="js/shop.js" defer></script>
 </body>
 </html>

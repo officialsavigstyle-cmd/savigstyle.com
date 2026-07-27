@@ -3,8 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — SAVIG STYLE</title>
-  <meta name="description" content="Learn about SAVIG STYLE — our story, mission, and commitment to premium quality and sustainable fashion.">
+  <title>Our Story — Ethical, Premium Cotton Apparel | SAVIG STYLE</title>
+  <meta name="description" content="Discover the SAVIG STYLE story — GOTS-certified cotton, fair wages, and premium craftsmanship behind every T-shirt we make.">
+  <link rel="canonical" href="https://www.savigstyle.com/about.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAVIG STYLE">
+  <meta property="og:title" content="Our Story — Ethical, Premium Cotton Apparel | SAVIG STYLE">
+  <meta property="og:description" content="Discover the SAVIG STYLE story — GOTS-certified cotton, fair wages, and premium craftsmanship behind every T-shirt we make.">
+  <meta property="og:url" content="https://www.savigstyle.com/about.html">
+  <meta property="og:image" content="https://www.savigstyle.com/images/savigstyle-logo.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Story — Ethical, Premium Cotton Apparel | SAVIG STYLE">
+  <meta name="twitter:description" content="GOTS-certified cotton, fair wages, and premium craftsmanship behind every T-shirt we make.">
+  <meta name="twitter:image" content="https://www.savigstyle.com/images/savigstyle-logo.webp">
+
+  <link rel="icon" type="image/webp" href="images/savigstyle-logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,7 +33,7 @@
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="header">
     <div class="container">
-      <a href="index.html"  class="logo"><img src="images/SavigStyle-logo.png" alt="SAVIG STYLE Logo""></a>
+      <a href="index.html"  class="logo"><img loading="lazy" src="images/savigstyle-logo.webp" alt="SAVIG STYLE Logo"></a>
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -32,7 +50,7 @@
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
-          <span class="cart-badge">3</span>
+          <span class="cart-badge">0</span>
         </a>
 
         <label class="menu-toggle" for="menu-check">
@@ -52,7 +70,7 @@
     <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart (3)</a>
+    <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
   </nav>
 
   <main>
@@ -70,7 +88,7 @@
       <div class="container">
         <div class="about-story">
           <div class="about-story-image">
-            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80" alt="SAVIG STYLE workshop and craftsmanship">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80" alt="SAVIG STYLE workshop and craftsmanship">
           </div>
           <div class="about-story-content">
             <h2>The SAVIG STYLE Story</h2>
@@ -164,7 +182,7 @@
             <a href="shop.html" class="btn btn-primary" style="margin-top:16px;">Explore the Collection</a>
           </div>
           <div class="about-story-image">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80" alt="Sustainable fashion values">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80" alt="Sustainable fashion values">
           </div>
         </div>
       </div>
@@ -200,10 +218,11 @@
         <div class="footer-col">
           <h4>Support</h4>
           <ul>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
+            <li><a href="shipping.html">Shipping Info</a></li>
+            <li><a href="return-policy.html">Return Policy</a></li>
             <li><a href="#">Size Guide</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -232,5 +251,6 @@
   </a>
   <div class="whatsapp-tooltip">Need help? Chat with us!</div>
 
+    <script src="js/cart.js" defer></script>
 </body>
 </html>

@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — SAVIG STYLE</title>
-  <meta name="description" content="Get in touch with SAVIG STYLE. We'd love to hear from you.">
+  <title>Contact Us | SAVIG STYLE</title>
+  <meta name="description" content="Have a question about an order or product? Contact SAVIG STYLE via WhatsApp or our online form — we typically reply within a day.">
+  <link rel="canonical" href="https://www.savigstyle.com/contact.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAVIG STYLE">
+  <meta property="og:title" content="Contact Us | SAVIG STYLE">
+  <meta property="og:description" content="Have a question about an order or product? Contact SAVIG STYLE via WhatsApp or our online form.">
+  <meta property="og:url" content="https://www.savigstyle.com/contact.html">
+  <meta property="og:image" content="https://www.savigstyle.com/images/savigstyle-logo.webp">
+
+  <link rel="icon" type="image/webp" href="images/savigstyle-logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,7 +27,7 @@
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="header">
     <div class="container">
-      <a href="index.html"  class="logo"><img src="images/SavigStyle-logo.png" alt="SAVIG STYLE Logo""></a>
+      <a href="index.html"  class="logo"><img loading="lazy" src="images/savigstyle-logo.webp" alt="SAVIG STYLE Logo"></a>
 
       <nav class="nav-links">
         <a href="index.html">Home</a>
@@ -32,7 +44,7 @@
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
-          <span class="cart-badge">3</span>
+          <span class="cart-badge">0</span>
         </a>
 
         <label class="menu-toggle" for="menu-check">
@@ -52,7 +64,7 @@
     <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart (3)</a>
+    <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
   </nav>
 
   <main>
@@ -207,10 +219,11 @@
         <div class="footer-col">
           <h4>Support</h4>
           <ul>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
+            <li><a href="shipping.html">Shipping Info</a></li>
+            <li><a href="return-policy.html">Return Policy</a></li>
             <li><a href="#">Size Guide</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -239,5 +252,6 @@
   </a>
   <div class="whatsapp-tooltip">Need help? Chat with us!</div>
 
+    <script src="js/cart.js" defer></script>
 </body>
 </html>
