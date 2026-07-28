@@ -9,6 +9,16 @@
   var CART_KEY = 'savigCart';
   var WHATSAPP_NUMBER = '923222920135';
   var MAX_QTY = 10;
+  var FREE_SHIPPING_MIN_ITEMS = 5;
+
+  function getShippingStatus(cart) {
+    var isFree = cartCount(cart) >= FREE_SHIPPING_MIN_ITEMS;
+    return {
+      free: isFree,
+      label: isFree ? 'Free' : 'Calculated by location',
+      note: 'Delivery is calculated by your location and will be confirmed with you on WhatsApp before payment.'
+    };
+  }
 
   function getCart() {
     try {
@@ -261,25 +271,54 @@
     updateSummary(cart);
   }
 
-  function buildWhatsAppMessage(cart, total) {
+  function buildWhatsAppMessage(cart, total, customer) {
     var msg = "Hi! I'd like to place an order:\n";
+
+    if (customer && (customer.name || customer.phone || customer.email || customer.address)) {
+      msg += '\nCustomer Details:\n';
+      if (customer.name) msg += 'Name: ' + customer.name + '\n';
+      if (customer.phone) msg += 'Phone: ' + customer.phone + '\n';
+      if (customer.email) msg += 'Email: ' + customer.email + '\n';
+      if (customer.address) msg += 'Address: ' + customer.address + '\n';
+      msg += '\nOrder:\n';
+    }
+
     cart.forEach(function (item, i) {
       msg += (i + 1) + '. ' + item.name + ' - ' + item.color + ' - Size ' + item.size +
         ' - Qty ' + item.qty + ' - ' + formatPrice(item.price * item.qty) + '\n';
     });
-    msg += 'Total: ' + formatPrice(total) + '\nPlease share payment and delivery details.';
+
+    var shipping = getShippingStatus(cart);
+    msg += 'Items Total: ' + formatPrice(total) + '\n';
+    if (shipping.free) {
+      msg += 'Delivery: Free (5+ items)\n';
+    } else {
+      msg += 'Delivery: To be confirmed based on your location — please share the delivery charge for my address.\n';
+    }
+
+    if (customer && customer.notes) {
+      msg += 'Notes: ' + customer.notes + '\n';
+    }
+
+    msg += 'Please share payment and delivery details.';
     return msg;
   }
 
   function updateSummary(cart) {
     var subtotal = cartTotal(cart);
+    var shipping = getShippingStatus(cart);
 
     var subtotalEl = document.getElementById('summary-subtotal');
     var totalEl = document.getElementById('summary-total');
     var subtotalCountEl = document.getElementById('summary-subtotal-count');
+    var shippingEl = document.getElementById('summary-shipping');
+    var shippingNoteEl = document.getElementById('summary-shipping-note');
+
     if (subtotalEl) subtotalEl.textContent = formatPrice(subtotal);
-    if (totalEl) totalEl.textContent = formatPrice(subtotal);
+    if (totalEl) totalEl.textContent = formatPrice(subtotal) + (shipping.free ? '' : ' + delivery');
     if (subtotalCountEl) subtotalCountEl.textContent = cartCount(cart);
+    if (shippingEl) shippingEl.textContent = shipping.label;
+    if (shippingNoteEl) shippingNoteEl.style.display = shipping.free ? 'none' : '';
 
     var isEmpty = cart.length === 0;
     var waHref = isEmpty ? '#' : ('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(buildWhatsAppMessage(cart, subtotal)));
@@ -300,8 +339,13 @@
           '<span>' + formatPrice(item.price * item.qty) + '</span></div>';
       }).join('');
     }
+    var modalShippingEl = document.getElementById('checkout-modal-shipping');
+    var modalShippingNoteEl = document.getElementById('checkout-modal-shipping-note');
+    if (modalShippingEl) modalShippingEl.textContent = shipping.label;
+    if (modalShippingNoteEl) modalShippingNoteEl.style.display = shipping.free ? 'none' : '';
+
     var modalTotalEl = document.getElementById('checkout-modal-total');
-    if (modalTotalEl) modalTotalEl.textContent = formatPrice(subtotal);
+    if (modalTotalEl) modalTotalEl.textContent = formatPrice(subtotal) + (shipping.free ? '' : ' + delivery');
   }
 
   /* ---------------- Product cards (home / shop listing) ---------------- */
@@ -372,10 +416,70 @@
     });
   }
 
+  /* ---------------- Checkout modal (cart page) ---------------- */
+
+  function getCheckoutFormData() {
+    var byId = function (id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    };
+    return {
+      name: byId('checkout-name'),
+      email: byId('checkout-email'),
+      phone: byId('checkout-phone'),
+      address: byId('checkout-address'),
+      notes: byId('checkout-notes')
+    };
+  }
+
+  function initCheckoutModal() {
+    var waLink = document.getElementById('checkout-modal-whatsapp-link');
+    if (!waLink) return;
+
+    var nameEl = document.getElementById('checkout-name');
+    var phoneEl = document.getElementById('checkout-phone');
+
+    function clearError(el) {
+      if (el) el.classList.remove('error');
+    }
+
+    [nameEl, phoneEl].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('input', function () { clearError(el); });
+    });
+
+    waLink.addEventListener('click', function (e) {
+      var cart = getCart();
+      if (cart.length === 0) {
+        e.preventDefault();
+        return;
+      }
+
+      var customer = getCheckoutFormData();
+      var missing = [];
+      if (!customer.name && nameEl) missing.push(nameEl);
+      if (!customer.phone && phoneEl) missing.push(phoneEl);
+
+      if (missing.length) {
+        e.preventDefault();
+        missing.forEach(function (el) { el.classList.add('error'); });
+        missing[0].focus();
+        return;
+      }
+
+      clearError(nameEl);
+      clearError(phoneEl);
+
+      var total = cartTotal(cart);
+      waLink.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(buildWhatsAppMessage(cart, total, customer));
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     updateBadges();
     initProductPage();
     initProductCards();
+    initCheckoutModal();
     renderCart();
   });
 })();

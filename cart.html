@@ -97,12 +97,15 @@
             </div>
             <div class="order-summary-row">
               <span>Shipping</span>
-              <span style="color:var(--color-gray);">Free</span>
+              <span id="summary-shipping" style="color:var(--color-gray);">Free</span>
             </div>
             <div class="order-summary-row total">
               <span>Total</span>
               <span id="summary-total">Rs 0</span>
             </div>
+            <p id="summary-shipping-note" style="font-size:0.78rem;color:var(--color-gray);margin-top:-8px;margin-bottom:8px;display:none;">
+              Delivery is calculated by location and confirmed with you on WhatsApp before payment.
+            </p>
 
             <!-- Checkout Button (opens modal) -->
             <label for="checkout-modal" class="btn btn-primary btn-large" style="width:100%;margin-top:20px;">Checkout</label>
@@ -119,7 +122,7 @@
             </div>
 
             <p style="font-size:0.8rem;color:var(--color-gray);margin-top:16px;text-align:center;">
-              Secure checkout &middot; 60-day returns &middot; Free shipping over $75
+              Secure checkout &middot; 60-day returns &middot; Free shipping on 5+ items
             </p>
           </div>
         </div>
@@ -168,10 +171,17 @@
         <div class="checkout-modal-summary">
           <h3 style="font-family:var(--font-body);font-size:0.95rem;font-weight:600;margin-bottom:12px;">Order Summary</h3>
           <div id="checkout-modal-items"></div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0 0;font-size:0.9rem;color:var(--color-gray);">
+            <span>Shipping</span>
+            <span id="checkout-modal-shipping">Free</span>
+          </div>
           <div style="display:flex;justify-content:space-between;padding:12px 0 0;border-top:1px solid var(--color-gray-lighter);font-weight:700;font-size:1rem;margin-top:8px;">
             <span>Total</span>
             <span id="checkout-modal-total">Rs 0</span>
           </div>
+          <p id="checkout-modal-shipping-note" style="font-size:0.78rem;color:var(--color-gray);margin-top:8px;display:none;">
+            Delivery is calculated by location and will be confirmed with you on WhatsApp before payment.
+          </p>
         </div>
 
         <!-- Send order via WhatsApp -->
@@ -188,7 +198,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="logo">SAVIG<span>.</span>STYLE</span>
+          <a href="index.html" class="logo"><img loading="lazy" src="images/savigstyle-logo.webp" alt="SAVIG STYLE Logo"></a>
           <p>Premium T-shirts crafted for those who demand more. Luxury streetwear, designed with intention and made to last.</p>
         </div>
         <div class="footer-col">

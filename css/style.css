@@ -935,9 +935,11 @@ h6 {
 }
 
 .footer-brand .logo {
-  color: var(--color-white);
+  width: 6rem;
   margin-bottom: var(--space-md);
   display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 .footer-brand p {
@@ -1816,6 +1818,10 @@ html:has(#remove-item-1:checked):has(#remove-item-2:checked):has(#remove-item-3:
 .checkout-form .form-group input:focus,
 .checkout-form .form-group textarea:focus {
   border-color: var(--color-black);
+}
+
+.checkout-form .form-group input.error {
+  border-color: #d33;
 }
 
 .checkout-form .form-group textarea {
