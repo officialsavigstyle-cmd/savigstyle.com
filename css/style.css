@@ -544,7 +544,6 @@ h6 {
 
 /* ── Trust Bar Container ──────────────────────── */
 .trust-bar {
-  /* width: 100vw; */
   background: linear-gradient(135deg, #1c1917 0%, #292524 50%, #1c1917 100%);
   border-top: 1px solid rgba(245, 158, 11, 0.15);
   border-bottom: 1px solid rgba(245, 158, 11, 0.15);
@@ -2448,5 +2447,185 @@ button,
 
   .container {
     padding: 0 var(--space-md);
+  }
+}
+
+/* ============================================
+   FULL-SITE MOBILE / ANDROID RESPONSIVE PASS
+   Applies across every page: home, shop, all
+   product pages, cart, about, contact, and the
+   policy pages that share this stylesheet.
+   ============================================ */
+
+/* Use dynamic viewport height so the hero never gets cut off
+   (or leaves a gap) behind the address bar on Android Chrome / Samsung Internet */
+@supports (height: 100svh) {
+  .hero {
+    min-height: 100svh;
+  }
+}
+
+/* Universal overflow guard — belt-and-braces alongside html/body rules above */
+img,
+svg,
+video,
+iframe,
+table {
+  max-width: 100%;
+}
+
+/* Trust bar was using a fixed left margin to nudge desktop centering;
+   on phones this pushed the whole row off-center / toward overflow. */
+@media (max-width: 768px) {
+  .trust-bar__items {
+    margin-left: 0;
+  }
+}
+
+/* Tighten the large desktop gaps once these layouts stack to 1 column,
+   and keep sticky galleries/summaries from fighting the mobile scroll */
+@media (max-width: 1024px) {
+  .product-detail-layout,
+  .cart-layout,
+  .contact-layout {
+    gap: var(--space-xl);
+  }
+
+  .product-gallery,
+  .order-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story {
+    gap: var(--space-xl);
+  }
+
+  /* Footer credit + social icons: wrap instead of squeezing/overlapping */
+  .footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+}
+
+/* Comfortably-sized tap targets for touch/Android devices (44px+ minimum) */
+@media (hover: none), (pointer: coarse) {
+  .menu-toggle {
+    width: 40px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .quantity-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .quantity-value {
+    height: 44px;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+  }
+
+  .size-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .cart-item-remove-label {
+    padding: 8px 0;
+  }
+
+  .faq-item summary {
+    padding: 4px 0;
+  }
+}
+
+/* Small phones: iPhone SE, older/budget Android (≤380px wide) */
+@media (max-width: 380px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.75rem, 8vw, 2.75rem);
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 0.8rem;
+  }
+
+  .btn-large {
+    padding: 15px 28px;
+  }
+
+  .product-gallery-thumb {
+    width: 64px;
+    height: 64px;
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .cart-item {
+    grid-template-columns: 72px 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .cart-item-image {
+    width: 72px;
+    height: 90px;
+  }
+
+  .size-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .collection-card-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .checkout-modal-body,
+  .checkout-modal-header {
+    padding: 20px;
+  }
+}
+
+/* Landscape phones (short viewport height) — keep the fixed header and
+   full-height hero from swallowing the whole screen */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 24px;
+  }
+
+  .mobile-nav {
+    overflow-y: auto;
   }
 }
