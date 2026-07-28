@@ -304,9 +304,78 @@
     if (modalTotalEl) modalTotalEl.textContent = formatPrice(subtotal);
   }
 
+  /* ---------------- Product cards (home / shop listing) ---------------- */
+
+  function initProductCards() {
+    var sizeGroups = document.querySelectorAll('.product-card-sizes[data-product-id]');
+
+    sizeGroups.forEach(function (sizesEl) {
+      var actionsEl = sizesEl.closest('.product-card-actions');
+      if (!actionsEl) return;
+
+      var sizeBtns = Array.prototype.slice.call(sizesEl.querySelectorAll('span'));
+      var addBtn = actionsEl.querySelector('.product-card-add-btn');
+      var selectedSize = null;
+
+      sizeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          sizeBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          selectedSize = btn.textContent.trim();
+          sizesEl.classList.remove('error');
+          var msg = actionsEl.querySelector('.product-card-size-error');
+          if (msg) msg.remove();
+        });
+      });
+
+      if (!addBtn) return;
+
+      addBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!selectedSize) {
+          sizesEl.classList.add('error');
+          if (!actionsEl.querySelector('.product-card-size-error')) {
+            var msg = document.createElement('div');
+            msg.className = 'product-card-size-error';
+            msg.textContent = 'Select a size first.';
+            actionsEl.insertBefore(msg, addBtn);
+          }
+          return;
+        }
+
+        var data = sizesEl.dataset;
+        var priceSL = parseInt(data.priceSl, 10);
+        var priceXlxxl = parseInt(data.priceXlxxl, 10);
+        var price = (selectedSize === 'XL' || selectedSize === 'XXL') ? priceXlxxl : priceSL;
+
+        addToCart({
+          productId: data.productId,
+          name: data.productName,
+          image: data.productImage,
+          color: data.productColor,
+          size: selectedSize,
+          price: price,
+          qty: 1
+        });
+
+        var originalText = addBtn.textContent;
+        addBtn.textContent = 'Added to Cart ✓';
+        addBtn.classList.add('added');
+        setTimeout(function () {
+          addBtn.textContent = originalText;
+          addBtn.classList.remove('added');
+        }, 1500);
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     updateBadges();
     initProductPage();
+    initProductCards();
     renderCart();
   });
 })();

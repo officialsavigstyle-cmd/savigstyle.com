@@ -540,10 +540,78 @@ h6 {
   border: 2px solid var(--color-gray-lighter);
 }
 
+/* Compact size selector shown on product cards (replaces color swatches) */
+.product-card-link {
+  display: block;
+}
+
+.product-card-actions {
+  padding: 0 var(--space-xs) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.product-card-sizes span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 22px;
+  padding: 0 4px;
+  border: 1px solid var(--color-gray-lighter);
+  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-gray);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.product-card:hover .product-card-sizes span {
+  border-color: var(--color-gray-light);
+}
+
+.product-card-sizes span:hover {
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.product-card-sizes span.active {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.product-card-sizes.error span {
+  border-color: #d33;
+}
+
+.product-card-size-error {
+  font-size: 0.7rem;
+  color: #d33;
+  margin-top: -4px;
+}
+
+.product-card-add-btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+}
+
 
 
 /* ── Trust Bar Container ──────────────────────── */
 .trust-bar {
+  /* width: 100vw; */
   background: linear-gradient(135deg, #1c1917 0%, #292524 50%, #1c1917 100%);
   border-top: 1px solid rgba(245, 158, 11, 0.15);
   border-bottom: 1px solid rgba(245, 158, 11, 0.15);
