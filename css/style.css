@@ -544,8 +544,7 @@ h6 {
 
 /* ── Trust Bar Container ──────────────────────── */
 .trust-bar {
-  width: 100%;
-  max-width: 1280px;
+  /* width: 100vw; */
   background: linear-gradient(135deg, #1c1917 0%, #292524 50%, #1c1917 100%);
   border-top: 1px solid rgba(245, 158, 11, 0.15);
   border-bottom: 1px solid rgba(245, 158, 11, 0.15);
@@ -585,9 +584,10 @@ h6 {
 
 /* ── Inner Flex Row ───────────────────────────── */
 .trust-bar__items {
+  margin-left: 4rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   gap: 2rem 2.5rem;
   list-style: none;
