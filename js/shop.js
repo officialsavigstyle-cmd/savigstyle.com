@@ -1,4 +1,4 @@
-/* SAVIG STYLE — Shop page logic
+/* SAVIG STYLE - Shop page logic
    Handles category filter buttons and the sort control on shop.html.
 */
 (function () {

@@ -1,4 +1,4 @@
-/* SAVIG STYLE — Cart logic
+/* SAVIG STYLE - Cart logic
    Handles: size selection, quantity stepper, add-to-cart, cart badge,
    and rendering the cart page. Cart is persisted in localStorage since
    this is a static site with no backend.
@@ -33,7 +33,7 @@
   function saveCart(cart) {
     try {
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    } catch (e) { /* storage unavailable — fail silently */ }
+    } catch (e) { /* storage unavailable - fail silently */ }
     updateBadges(cart);
   }
 
@@ -293,7 +293,7 @@
     if (shipping.free) {
       msg += 'Delivery: Free (5+ items)\n';
     } else {
-      msg += 'Delivery: To be confirmed based on your location — please share the delivery charge for my address.\n';
+      msg += 'Delivery: To be confirmed based on your location - please share the delivery charge for my address.\n';
     }
 
     if (customer && customer.notes) {

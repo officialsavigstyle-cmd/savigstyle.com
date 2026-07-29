@@ -1,4 +1,4 @@
-/* SAVIG STYLE — Product gallery logic
+/* SAVIG STYLE - Product gallery logic
    Handles swapping the main product image when a thumbnail is clicked,
    and keeps the "active" state in sync with the selected thumbnail.
 */

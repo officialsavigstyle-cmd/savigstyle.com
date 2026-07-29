@@ -1,5 +1,5 @@
 /* ============================================
-   SAVIG STYLE — Premium T-Shirt eCommerce
+   SAVIG STYLE - Premium T-Shirt eCommerce
    Modern CSS-only stylesheet
    ============================================ */
 
@@ -344,10 +344,39 @@ h6 {
   height: 24px;
   cursor: pointer;
   z-index: 1001;
+  border-radius: var(--radius-sm);
 }
 
 .menu-toggle input {
   display: none;
+}
+
+/* Keep the toggle checkbox in the tab order (instead of display:none)
+   so keyboard users can reach and operate the mobile menu with Tab + Space.
+   Visually hidden, but still focusable and announced by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visible focus ring on the hamburger icon when the underlying checkbox
+   has keyboard focus (checkbox lives elsewhere in the DOM, so :has() on a
+   common ancestor is used to reach it). */
+body:has(#menu-check:focus-visible) .menu-toggle {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* Lock background scroll while the mobile menu is open */
+body:has(#menu-check:checked) {
+  overflow: hidden;
 }
 
 .menu-toggle span {
@@ -620,7 +649,7 @@ h6 {
   overflow: hidden;
 }
 
-/* Subtle animated shimmer line — top */
+/* Subtle animated shimmer line - top */
 .trust-bar::before {
   content: '';
   position: absolute;
@@ -632,7 +661,7 @@ h6 {
   animation: shimmer 4s ease-in-out infinite;
 }
 
-/* Subtle animated shimmer line — bottom */
+/* Subtle animated shimmer line - bottom */
 .trust-bar::after {
   content: '';
   position: absolute;
@@ -1745,6 +1774,18 @@ html:has(#remove-item-1:checked):has(#remove-item-2:checked):has(#remove-item-3:
   pointer-events: all;
 }
 
+/* Visible focus ring on whichever label (Checkout button / × close)
+   currently controls the checkbox, for keyboard users tabbing to it. */
+body:has(#checkout-modal:focus-visible) label[for="checkout-modal"] {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Lock background scroll while the checkout modal is open */
+body:has(#checkout-modal:checked) {
+  overflow: hidden;
+}
+
 .checkout-modal {
   background-color: var(--color-white);
   border-radius: var(--radius-xl);
@@ -2416,6 +2457,14 @@ button,
   }
 }
 
+@media (max-width: 900px) {
+  /* Ease the gap slightly before the hamburger takes over, so tablets
+     in the 768–900px range don't feel cramped with all 5 links + icons. */
+  .nav-links {
+    gap: var(--space-xl);
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -2423,6 +2472,38 @@ button,
 
   .menu-toggle {
     display: block;
+  }
+
+  /* Reflow the header row for mobile: hamburger left, logo centered,
+     cart icon right. header-actions is unwrapped (display: contents)
+     so its children (cart-icon, menu-toggle) become direct grid items
+     that can be placed independently of their markup order. */
+  .header .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+
+  .header-actions {
+    display: contents;
+  }
+
+  .menu-toggle {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .cart-icon {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .mobile-nav {
@@ -2539,7 +2620,7 @@ button,
   }
 }
 
-/* Universal overflow guard — belt-and-braces alongside html/body rules above */
+/* Universal overflow guard - belt-and-braces alongside html/body rules above */
 img,
 svg,
 video,
@@ -2626,6 +2707,14 @@ table {
     padding: 0 12px;
   }
 
+  :root {
+    --header-height: 64px;
+  }
+
+  .logo {
+    width: 3.25rem;
+  }
+
   .hero-content h1 {
     font-size: clamp(1.75rem, 8vw, 2.75rem);
   }
@@ -2690,7 +2779,7 @@ table {
   }
 }
 
-/* Landscape phones (short viewport height) — keep the fixed header and
+/* Landscape phones (short viewport height) - keep the fixed header and
    full-height hero from swallowing the whole screen */
 @media (max-height: 480px) and (orientation: landscape) {
   .hero {

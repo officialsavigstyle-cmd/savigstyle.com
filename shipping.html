@@ -32,7 +32,6 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="shop.html">Collections</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -47,7 +46,7 @@
           <span class="cart-badge">0</span>
         </a>
 
-        <label class="menu-toggle" for="menu-check">
+        <label class="menu-toggle" for="menu-check" role="button" aria-label="Toggle navigation menu" aria-haspopup="true" aria-controls="mobile-nav">
           <span></span>
           <span></span>
           <span></span>
@@ -57,11 +56,10 @@
   </header>
 
   <!-- Mobile Nav -->
-  <input type="checkbox" id="menu-check" style="display:none">
-  <nav class="mobile-nav">
+  <input type="checkbox" id="menu-check" class="visually-hidden">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
@@ -82,7 +80,7 @@
       <div class="container" style="max-width:800px;margin:0 auto;">
 
         <h2 style="margin-bottom:12px;">Made With Intention</h2>
-        <p style="color:var(--color-gray);line-height:1.8;margin-bottom:32px;">Each SAVIG STYLE T-shirt is made especially for you as soon as you place an order, rather than kept in bulk inventory. Making products on demand helps reduce overproduction — which is why it takes us a little longer to get your order out the door, but we think it's worth it.</p>
+        <p style="color:var(--color-gray);line-height:1.8;margin-bottom:32px;">Each SAVIG STYLE T-shirt is made especially for you as soon as you place an order, rather than kept in bulk inventory. Making products on demand helps reduce overproduction - which is why it takes us a little longer to get your order out the door, but we think it's worth it.</p>
 
         <h2 style="margin-bottom:12px;">Delivery Times</h2>
         <ul style="color:var(--color-gray);line-height:2;margin-bottom:32px;padding-left:20px;">
@@ -127,8 +125,6 @@
           <ul>
             <li><a href="about.html">Our Story</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Careers</a></li>
           </ul>
         </div>
 
@@ -137,7 +133,6 @@
           <ul>
             <li><a href="shipping.html">Shipping Info</a></li>
             <li><a href="return-policy.html">Return Policy</a></li>
-            <li><a href="#">Size Guide</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>

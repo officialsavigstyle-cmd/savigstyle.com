@@ -66,7 +66,6 @@
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="shop.html">Collections</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -82,7 +81,7 @@
           <span class="cart-badge">0</span>
         </a>
 
-        <label class="menu-toggle" for="menu-check">
+        <label class="menu-toggle" for="menu-check" role="button" aria-label="Toggle navigation menu" aria-haspopup="true" aria-controls="mobile-nav">
           <span></span>
           <span></span>
           <span></span>
@@ -92,11 +91,10 @@
   </header>
 
   <!-- Mobile Nav (CSS-only) -->
-  <input type="checkbox" id="menu-check" style="display:none">
-  <nav class="mobile-nav">
+  <input type="checkbox" id="menu-check" class="visually-hidden">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
@@ -556,7 +554,7 @@
                   d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
-            <blockquote>"The packaging alone tells you this brand cares. Every stitch, every detail — it's like wearing
+            <blockquote>"The packaging alone tells you this brand cares. Every stitch, every detail - it's like wearing
               a piece of art."</blockquote>
             <cite>Sarah Chen <span>Graphic Series Owner</span></cite>
           </div>
@@ -647,7 +645,7 @@
       <div class="container">
         <span class="label" style="color:var(--color-accent);">Stay Connected</span>
         <h2 class="heading-md" style="margin-top:8px;">Join the SAVIG Community</h2>
-        <p>Get early access to new drops, exclusive offers, and style inspiration delivered to your inbox.</p>
+        <p>Get early access to new drops, exclusive offers, and style inspiration - we'll message you on WhatsApp.</p>
         <form class="newsletter-form" action="#" method="post">
           <input type="email" placeholder="Enter your email address" required>
           <button type="submit">Subscribe</button>
@@ -680,8 +678,6 @@
           <ul>
             <li><a href="about.html">Our Story</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Careers</a></li>
           </ul>
         </div>
 
@@ -690,7 +686,6 @@
           <ul>
             <li><a href="shipping.html">Shipping Info</a></li>
             <li><a href="return-policy.html">Return Policy</a></li>
-            <li><a href="#">Size Guide</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>
@@ -738,6 +733,7 @@
   <div class="whatsapp-tooltip">Need help? Chat with us!</div>
 
   <script src="js/cart.js" defer></script>
+  <script src="js/forms.js" defer></script>
 </body>
 
 </html>

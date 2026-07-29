@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Cart — SAVIG STYLE</title>
+  <title>Shopping Cart - SAVIG STYLE</title>
   <meta name="description" content="Your shopping cart at SAVIG STYLE.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/webp" href="images/savigstyle-logo.webp">
@@ -15,7 +15,7 @@
 <body>
 
   <!-- ═══════════ HIDDEN CHECKBOX FOR CHECKOUT MODAL ═══════════ -->
-  <input type="checkbox" id="checkout-modal" style="display:none">
+  <input type="checkbox" id="checkout-modal" class="visually-hidden" aria-label="Toggle checkout form">
 
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="header">
@@ -25,7 +25,6 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="shop.html">Collections</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -40,7 +39,7 @@
           <span class="cart-badge">0</span>
         </a>
 
-        <label class="menu-toggle" for="menu-check">
+        <label class="menu-toggle" for="menu-check" role="button" aria-label="Toggle navigation menu" aria-haspopup="true" aria-controls="mobile-nav">
           <span></span>
           <span></span>
           <span></span>
@@ -50,11 +49,10 @@
   </header>
 
   <!-- Mobile Nav -->
-  <input type="checkbox" id="menu-check" style="display:none">
-  <nav class="mobile-nav">
+  <input type="checkbox" id="menu-check" class="visually-hidden">
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="shop.html">Collections</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="cart.html">Cart (<span id="cart-badge-mobile">0</span>)</a>
@@ -215,8 +213,6 @@
           <ul>
             <li><a href="about.html">Our Story</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Careers</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -224,7 +220,6 @@
           <ul>
             <li><a href="shipping.html">Shipping Info</a></li>
             <li><a href="return-policy.html">Return Policy</a></li>
-            <li><a href="#">Size Guide</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
           </ul>
