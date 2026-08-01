@@ -2792,3 +2792,36 @@ table {
     overflow-y: auto;
   }
 }
+/* ═══════════ INSTAGRAM FEED SECTION ═══════════ */
+.instagram-section {
+  text-align: center;
+}
+
+.instagram-section .instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.instagram-section .instagram-link:hover {
+  color: var(--color-accent);
+}
+
+.instagram-section .instagram-link svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.instagram-widget-wrap {
+  margin-top: var(--space-2xl);
+}
+
+.instagram-widget-wrap iframe {
+  border-radius: 12px;
+}
